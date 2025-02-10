@@ -26,7 +26,16 @@ public class Venda {
     public void adicionarProduto(Produto produto) {
         produtos.add(produto);
     }
-    public String toString() {
-        return "Venda= [" + id + cliente + produtos + "]";
+   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("Código da Venda: ").append(id).append("\n");
+    sb.append("Cliente: ").append(cliente.getNome()).append("\n");
+    sb.append("Produtos:\n");
+    for (Produto produto : produtos) {
+        sb.append(" - ").append(produto.getNome())
+          .append(" (ID: ").append(produto.getId())
+          .append(", Preço: R$ ").append(produto.getPreco()).append(")\n");
     }
+    return sb.toString();
 }
+    }
