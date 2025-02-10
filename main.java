@@ -35,7 +35,7 @@ public class Main {
                     System.out.println("Saindo"); // Mensagem de saída do programa
                     break;
                 default:
-                    System.out.println("Opção inválida! Tente novamente."); // Mensagem para opção inválida
+                    System.out.println("Opçao inválida! Tente novamente."); // Mensagem para opção inválida
             }
         } while (opcao != 5); // Continua no loop enquanto a opção selecionada não for 5
 
@@ -50,7 +50,7 @@ public class Main {
         System.out.println("3. Registrar Venda");
         System.out.println("4. Listar Vendas");
         System.out.println("5. Sair");
-        System.out.print("Escolha uma Opção: ");
+        System.out.print("Escolha uma Opçao: ");
     }
 
     // Método para adicionar um novo produto à lista de produtos
@@ -145,7 +145,7 @@ public class Main {
         }
 
         if (cliente == null) {
-            System.out.println("Cliente não encontrado!"); // Informa se o cliente não existe
+            System.out.println("Cliente nao encontrado!"); // Informa se o cliente não existe
             return; // Encerra o método se o cliente não for encontrado
         }
 
@@ -169,7 +169,7 @@ public class Main {
             }
 
             if (produto == null) {
-                System.out.println("Produto não encontrado!"); // Informa se o produto não existe
+                System.out.println("Produto nao encontrado!"); // Informa se o produto não existe
             } else {
                 venda.adicionarProduto(produto); // Adiciona o produto à venda
                 System.out.println("Produto adicionado à venda!");
