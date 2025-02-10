@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 // Classe principal do programa
-public class Main {
+public class main {
 
     // Declaração de listas para armazenar produtos, clientes e vendas
     private static ArrayList<Produto> produtos = new ArrayList<>();
@@ -29,15 +29,21 @@ public class Main {
                     registrarVenda(scanner); // Chama o método para registrar uma venda
                     break;
                 case 4:
-                    listarVendas(); // Chama o método para listar as vendas registradas
+                    listarProdutos(); // Chama o método para listar produtos registrados
                     break;
                 case 5:
+                    listarClientes(); // Chama o método para listar clientes registrados
+                    break;
+                case 6:
+                    listarVendas(); // Chama o método para listar as vendas registradas
+                    break;
+                case 7:
                     System.out.println("Saindo"); // Mensagem de saída do programa
                     break;
                 default:
                     System.out.println("Opçao inválida! Tente novamente."); // Mensagem para opção inválida
             }
-        } while (opcao != 5); // Continua no loop enquanto a opção selecionada não for 5
+        } while (opcao != 7); // Continua no loop enquanto a opção selecionada não for 5
 
         scanner.close(); // Fecha o scanner para liberar recursos
     }
@@ -48,8 +54,10 @@ public class Main {
         System.out.println("1. Adicionar Produto");
         System.out.println("2. Adicionar Cliente");
         System.out.println("3. Registrar Venda");
-        System.out.println("4. Listar Vendas");
-        System.out.println("5. Sair");
+        System.out.println("4. Listar Produtos");
+        System.out.println("5. Listar Clientes");
+        System.out.println("6. Listar Vendas");
+        System.out.println("7. Sair");
         System.out.print("Escolha uma Opçao: ");
     }
 
@@ -176,8 +184,26 @@ public class Main {
             }
         }
 
-        vendas.add(venda); // Adiciona a venda à lista de vendas
+        vendas.add(venda); // Adiciona a venda à lista de produtos
         System.out.println("Venda registrada!");
+    }
+    private static void listarProdutos() {
+        if (produtos.isEmpty()) {
+            System.out.println("Nenhum produto registrado."); // Informa se não há produtos
+        } else {
+            for (Produto v : produtos) {
+                System.out.println(v); // Imprime cada venda registrada
+            }
+        }
+    }
+    private static void listarClientes() {
+        if (clientes.isEmpty()) {
+            System.out.println("Nenhum cliente registrado."); // Informa se não há cliente
+        } else {
+            for (Cliente v : clientes) {
+                System.out.println(v); // Imprime cada venda registrada
+            }
+        }
     }
 
     // Método para listar todas as vendas registradas
